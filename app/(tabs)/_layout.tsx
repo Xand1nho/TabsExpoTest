@@ -1,12 +1,12 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-import { Image, StyleSheet} from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 
 
 export default function TabLayout() {
   return (
     <Tabs screenOptions={{
-      tabBarStyle:{
+      tabBarStyle: {
         backgroundColor: '#f4f4f4',
         borderTopWidth: 8,
         borderTopColor: '#0a3b60',
@@ -19,31 +19,32 @@ export default function TabLayout() {
         },
         shadowOpacity: 1,
         shadowRadius: 30,
-        elevation: 5, 
+        elevation: 5,
 
       }
-    }}> 
+    }}>
       <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: () => <Image style={s.iconTab} source={require('@/assets/Casa.gif')}/>
+          tabBarIcon: () => <Image style={s.iconTab} source={require('@/assets/Casa.gif')} />
         }}
       />
       <Tabs.Screen
         name="explore"
         options={{
           title: 'Explore',
-          tabBarIcon: () => <Image style={s.iconTab} source={require('@/assets/Pesquisa.gif')}/>
+          tabBarIcon: () => <Image style={s.iconTab} source={require('@/assets/Pesquisa.gif')} />
 
         }}
       />
+      <Tabs.Screen name="list" options={{ title:'List', headerShown: false, tabBarIcon: () => <Image style={s.iconTab} source={require('@/assets/Lista.gif')}/>}} />
     </Tabs>
   );
 }
 
 const s = StyleSheet.create({
-  iconTab:{
+  iconTab: {
     width: 35,
     height: 35,
   }
